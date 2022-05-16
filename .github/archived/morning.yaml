@@ -1,0 +1,36 @@
+name: Morning Brew
+
+on:
+  # push:
+  #   branches: [master]
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  github-actions:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # node-version: [16.x, 14.x, 12.x]
+        # os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [16.x]
+        os: [ubuntu-latest]
+    name: Node.js ${{ matrix.node-version }} ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: yarn install
+      - name: Send Message
+        run: yarn ts-node ./scripts/send-message.ts
+        env:
+          API_KEY_FOOTBALL_DATA: ${{ secrets.API_KEY_FOOTBALL_DATA }}
+          API_KEY_NEWS_V2: ${{ secrets.API_KEY_NEWS_V2 }}
+          API_KEY_OPEN_WEATHER_MAP: ${{ secrets.API_KEY_OPEN_WEATHER_MAP }}
+          API_KEY_TELEGRAM: ${{ secrets.API_KEY_TELEGRAM }}
+          API_KEY_YOUTUBE_V3: ${{ secrets.API_KEY_YOUTUBE_V3 }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
