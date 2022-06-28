@@ -20,7 +20,7 @@
     "docker:start": "docker run -p 8080:8080 data:latest"
   },
   "dependencies": {
-    "axios": "0.26.1",
+    "axios": "0.27.2",
     "cookie-parser": "1.4.6",
     "dotenv": "16.0.1",
     "express": "4.18.1",
