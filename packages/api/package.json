@@ -28,7 +28,7 @@
     "lodash": "4.17.21",
     "pino": "8.1.0",
     "swagger-ui-express": "4.4.0",
-    "tsoa": "3.14.1"
+    "tsoa": "4.1.0"
   },
   "devDependencies": {
     "@types/cheerio": "0.22.31",
