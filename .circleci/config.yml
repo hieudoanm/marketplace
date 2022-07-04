@@ -4,44 +4,36 @@ jobs:
   build:
     docker:
       - image: node:16
-    working_directory: ~/hieudoan.news
+    working_directory: ~/marketplace
     steps:
       - checkout
       - run:
-          name: 'Installing YARN packages'
+          name: 'Installing Dependencies'
           command: yarn install
       - run:
-          name: 'Run YARN build'
+          name: 'Build Production'
           command: yarn build
-      - run:
-          name: 'Check files and folder'
-          command: pwd && ls -la
-      - store_artifacts:
-          path: ./dist
-          destination: build
   test:
     docker:
       - image: node:16
-    working_directory: ~/hieudoan.news
+    working_directory: ~/marketplace
     steps:
       - checkout
       - run:
-          name: 'Installing YARN packages'
+          name: 'Installing Dependencies'
           command: yarn install
       - run:
-          name: 'Run YARN tests'
+          name: 'Unit Tests'
           command: yarn test
-      - run:
-          name: 'Check files and folder'
-          command: pwd && ls -la
-      - store_test_results:
-          path: ./coverage
 
 workflows:
   version: 2
   build_test:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only: master
       - test:
           requires:
             - build
