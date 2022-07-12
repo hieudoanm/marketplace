@@ -1281,10 +1281,10 @@
   dependencies:
     buffer "~6.0.3"
 
-"@solana/wallet-adapter-base@0.9.7":
-  version "0.9.7"
-  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.9.7.tgz#9ce3446ed8d8ee5b3b39943df143e651289813f7"
-  integrity sha512-XS1roBwoS+5wRcWudJfS7NPDRJUwfuq9tZwFElpGlgVnndlLARiv7lLp2IkpFPyPr7Q2H4j9pkGi1XLoRAx1lQ==
+"@solana/wallet-adapter-base@0.9.8", "@solana/wallet-adapter-base@^0.9.8":
+  version "0.9.8"
+  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.9.8.tgz#7469d878d481a0004c29276f3f4d7fa09e3e7293"
+  integrity sha512-SYbSGQuWih2N5zOtLO21cbEFt8G4PFWMhE/9qlAXjsXRjdGz+pU6NkNMzspvdAizCLUPuB9biKFjX82W0SZm3w==
   dependencies:
     eventemitter3 "^4.0.0"
 
@@ -1292,13 +1292,6 @@
   version "0.9.6"
   resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.9.6.tgz#c2f825504f15fdb0b7ec49ab191d3ddf7d2d0950"
   integrity sha512-3NjjbDaySenUmjuWHHXJT+44hSB6vf9pr5ymvq/4L+sV96ymF6omD45MoS1/io0VlJQzvq6fcbfvnzyFRagmwA==
-  dependencies:
-    eventemitter3 "^4.0.0"
-
-"@solana/wallet-adapter-base@^0.9.8":
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/@solana/wallet-adapter-base/-/wallet-adapter-base-0.9.8.tgz#7469d878d481a0004c29276f3f4d7fa09e3e7293"
-  integrity sha512-SYbSGQuWih2N5zOtLO21cbEFt8G4PFWMhE/9qlAXjsXRjdGz+pU6NkNMzspvdAizCLUPuB9biKFjX82W0SZm3w==
   dependencies:
     eventemitter3 "^4.0.0"
 
