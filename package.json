@@ -1,0 +1,40 @@
+{
+  "name": "marketplace",
+  "version": "0.0.1",
+  "description": "Marketplace",
+  "main": "index.js",
+  "repository": "git@github.com:hieudoanm/marketplace.git",
+  "author": "hieudoanm <hieumdoan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:api": "yarn workspace api build",
+    "build:order": "yarn workspace order build",
+    "build:payment": "yarn workspace payment build",
+    "build": "yarn build:api && yarn build:order && yarn build:payment",
+    "dev:api": "yarn workspace api dev",
+    "dev:order": "yarn workspace order start:dev",
+    "dev:payment": "yarn workspace payment start:dev",
+    "dev": "concurrently --kill-others-on-fail \"yarn dev:api\" \"yarn dev:order\" \"yarn dev:payment\"",
+    "lint:api": "yarn workspace api lint",
+    "lint:order": "yarn workspace order lint",
+    "lint:payment": "yarn workspace payment lint",
+    "lint": "yarn lint:api && yarn lint:order && yarn lint:payment",
+    "test:api": "yarn workspace api test",
+    "test:order": "yarn workspace order test",
+    "test:payment": "yarn workspace payment test",
+    "test": "yarn test:api && yarn test:order && yarn test:payment",
+    "graph": "nx graph"
+  },
+  "devDependencies": {
+    "concurrently": "7.3.0",
+    "husky": "8.0.1",
+    "nx": "14.4.3",
+    "prettier": "2.7.1",
+    "pretty-quick": "3.1.3"
+  },
+  "workspaces": [
+    "messages/*",
+    "services/*"
+  ]
+}
